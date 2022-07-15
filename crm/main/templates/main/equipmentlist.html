@@ -1,0 +1,27 @@
+{% extends "main/base.html" %}
+{% load static %}
+{% block content %}
+
+<div class="buttons">
+    <button class="btn newclientbtn">Добавить категорию</button>
+    <button class="btn closeclientbtn">Закрыть</button>
+
+    <form method="post" >
+        <div class="new_client_form">
+            {% csrf_token %}
+            <input type="text" name="cat_name" class="form_input1">
+            <button class="btn newclientbtn add__btn" type="submit" id="btn1">Добавить</button>
+            </div>
+    </form>
+
+</div>
+
+<div class="list__contain">
+        {% for eq in equip %}
+        <a href="#" class="client__item">{{eq.cat_name}}</a>
+        {% endfor %}
+ 
+</div>
+
+<script src="{% static 'main/js/1.js' %}"></script>
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends "main/base.html" %}
+{% load static %}
+{% block content %}
+	<div class="form_container">
+		<div class="form_inner">
+			{% if request.user.img %}
+			<img class="profile_photo" src="{{ request.user.img.url }}">
+			{% else %}
+			<img class="profile_photo" src="{% static 'main/img/2.png' %}">
+			{% endif %}
+			<div class="info_container">
+				<ul>
+					<li>Имя: {{ request.user.first_name }}</li>
+					<li>Фамилия: {{ request.user.sur_name }}</li>
+					<li>Должность: {{ request.user.stage }}</li>
+					<li>Телефон: 105</li>	
+				</ul>
+			</div>
+		</div>
+	</div>
+{% endblock %}

@@ -1,0 +1,9 @@
+{% extends "main/base.html" %}
+{% load static %}
+{% block content %}
+<div class="list__contain">
+    {% for client in clients %}
+    <a href="#" class="client__item">{{client.client_name}}</a>
+    {% endfor %}
+</div>
+{% endblock %}
