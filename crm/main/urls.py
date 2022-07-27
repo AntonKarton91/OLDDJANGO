@@ -4,20 +4,21 @@ from .views import *
 
 # ____________________________________________________________________________________________
 # Создаем класс роутера
-taskRouter = routers.DefaultRouter()
+# taskRouter = routers.DefaultRouter()
 
 # Регистрируем Вьюсет в роутере (r'tasks' - это префикс в маршруте)
-taskRouter.register(r'tasks', TaskViewSet)
-print(taskRouter.urls)
+# taskRouter.register(r'tasks', TaskViewSet)
+# print(taskRouter.urls)
 # /////////////////////////////////////////////////////////////////////////////////////////////
 
 
 
 urlpatterns = [
     path('', Main.as_view(), name='main'),
-    path('api/v1/clientlist/', ClientListView.as_view()),
-    path('api/v1/catlist', CatListView.as_view()),
-    path('api/v1/columnlist/', ColumnTaskAPIView.as_view()),
+    # path('api/v1/clientlist/', ClientListView.as_view()),
+    # path('api/v1/catlist', CatListView.as_view()),
+    # path('api/v1/columnlist/', ColumnTaskAPIView.as_view()),
+    path('login/', RegisterUser.as_view(), name='register'),
 
     # ____________________________________________________________________________________________
     # Вьюсет для отображения модели ЗАДАЧИ, в словаре дополнительно указываются разрешенные методы
@@ -28,7 +29,7 @@ urlpatterns = [
 
     # ____________________________________________________________________________________________
     # Вьюсет c использованием роутера.
-    path('api/v1/', include(taskRouter.urls)), # http://127.0.0.1:8000/api/v1/tasks/
+    # path('api/v1/', include(taskRouter.urls)), # http://127.0.0.1:8000/api/v1/tasks/
     # /////////////////////////////////////////////////////////////////////////////////////////////
 
 

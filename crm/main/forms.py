@@ -1,8 +1,8 @@
-# from django.contrib.auth import password_validation
-# from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
-# from django import forms
-#
-# from .models import *
+from django.contrib.auth import password_validation
+from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
+from django import forms
+
+from .models import *
 #
 # class RegisterUserForm(UserCreationForm):
 #     password1 = forms.CharField(
@@ -44,7 +44,7 @@
 #             'stage': forms.Select(attrs={'class': 'form-input'}),
 #
 #         }
-#
+
 # class LoginUserForm(AuthenticationForm):
 #     username = forms.CharField(widget=forms.TextInput(attrs={"autofocus": True, 'class': 'form-input'}))
 #     password = forms.CharField(
